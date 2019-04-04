@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'midgo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'midgodb',
         'HOST': 'midgo-db.cvyej8u3xdxm.ap-northeast-2.rds.amazonaws.com',
         'PORT': '5432',
