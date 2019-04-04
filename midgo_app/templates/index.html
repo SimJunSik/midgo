@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script> -->
+    <style type="text/css">
+        body{
+            height: 1000px;
+            margin: 0;
+            position: relative;
+            background-color: beige;
+        }
+
+        .top{
+            width: 100%;
+            height: 20%;
+            position: relative;
+            background-color: beige;
+        }
+
+        .top_left{
+            width: 30%;
+            height: 100%;
+            background-color: transparent;
+            float: left;
+        }
+
+        .top_center{
+            width: 40%;
+            height: 100%;
+            position: relative;
+            font-size: 5rem;
+            text-align: center;
+            background-color: transparent;
+            color : black;
+            float: left;
+        }
+
+        .top_center_text{
+            width: auto;
+            height: auto;
+            font-size: 5rem;
+            text-align: center;
+            color : black;
+            position: relative;
+            top: 50%;
+            transform: translate(0%, -50%);
+        }
+
+        .top_right{
+            width: 30%;
+            height: 100%;
+            background-color: transparent;
+            position: relative;
+            float: left;
+        }
+
+
+        .middle{
+            width: 100%;
+            height: 80%;
+            background-color: transparent;
+        }
+
+        .middle_image_div{
+            width: 85%;
+            height: 100%;
+            background-color: transparent;
+            position: relative;
+            top : 50%;
+            left : 50%;
+            transform: translate(-50%, -50%);
+            background-image: url('/static/image/index_image2.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .top_right_button_div{
+            width: 40%;
+            height: auto;
+            background-color: transparent;
+            position: relative;
+            top: 10%;
+            left: 20%;
+        }
+        
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.8rem;
+            margin: 4px 2px;
+        }
+
+        #login_button{
+            width: 40%;
+            position: relative;
+            float: left;
+            border-radius: 12px;
+        }
+
+        #join_button{
+            width: 40%;
+            position: relative;
+            float: left;
+            border-radius: 12px;
+        }
+
+        .noti_button_div{
+            width: 5vw;
+            height: 5vw;
+            position: relative;
+            top : 10%;
+            left: 20%;
+            -webkit-animation: bounce 1s infinite;
+            background-color: transparent;
+        }
+            
+        @-webkit-keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                -webkit-transform: translateY(0); 
+            }
+            40% {
+                -webkit-transform: translateY(-25px); 
+            }
+            60% {
+                -webkit-transform: translateY(-15px); 
+            }
+        }
+
+        .noti_image{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        .noti_div{
+            position: absolute;
+            width: 80%;
+            height: 70%;
+            background-color: aquamarine;
+            top : 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        .bottom{
+            width: 100%;
+            height: 30%;
+            background-color: blue;
+        }
+
+        .bottom_text_div{
+            width: 80%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            background-color: aliceblue;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .category_div{
+            width: 20%;
+            height: 100%;
+            position: absolute;
+            top: 0%;
+            right: -30%;
+            background-color: black;
+            opacity: 0.8;
+            display: block;
+        }
+
+        .category_content_div{
+            width: 100%;
+            height: 70%;
+            position: relative;
+            background-color: blue;
+            top: 50%;
+            transform: translate(0%, -50%);
+        }
+
+        .category_content{
+            width: 100%;
+            height: 25%;
+            position: relative;
+            background-color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div class="top_left">
+            <div class="noti_button_div" onclick="toggle_notification();">
+                <img class="noti_image" src="/static/image/noti_image1.jpg">
+            </div>
+        </div>
+        <div class="top_center">
+            <div class="top_center_text">
+                MIDGO<br>
+                <p style="font-size : 1rem; font-weight : 500;">
+                    <font color="pink">믿</font>고알아가는<font color="pink">꼬</font>미네
+                </p>
+            </div>
+        </div>
+        <div class="top_right">
+            <div class="top_right_button_div">
+                <button class="button" id="login_button">로그인</button>
+                <button class="button" id="join_button">회원가입</button>
+                <button class="button" id="category_button" onclick="toggle_category();">=</button>
+            </div>
+        </div>
+    </div>
+    <div class="middle">
+        <div class="middle_image_div">
+
+        </div>
+    </div>
+
+    <!-- <div class="bottom">
+        <div class="bottom_text_div">
+                <br>
+                “우리가 이 땅에서 고양이한테 어떻게 대해주느냐에 따라 천국에서의 위치가 달라진다." <br>
+                - 로버트 A. 하인라인 - <br>
+                
+                “고양이의 눈 속에는 세상 모든것이 있다.” <br>
+                “고양이와 함께 하는 시간은 절대 낭비되는 시간이 아니다.” <br>
+                - 콜렛 - <br>
+                
+                "만약 고양이가 나무에서 떨어지면 집 안에 들어가서 웃으라." <br>
+                - 패트리샤 히치콕- <br>
+                
+                "고양이는 꼭 사진찍기 불가능할 때만 가장 기묘하고, 흥미롭고, 아름다운 포즈를 취한다. <br>
+                그래서 고양이 달력에는 실망스럽게도 항상 대중용 포즈밖에 나와있지 않다." <br>
+                - J. R. 코울슨- <br>
+        </div>
+    </div> -->
+
+    <div class="category_div">
+        <div class="category_content_div">
+                <div class="category_content">
+                    <div class="category_A" style="width: 50%; height: 50%; background-color: white;">
+                        CATEGORY A
+                    </div>
+                </div>
+                <div class="category_content">
+                    <div class="category_B" style="width: 50%; height: 50%; background-color: white;">
+                        CATEGORY B
+                    </div>
+                </div>
+                <div class="category_content">
+                    <div class="category_C" style="width: 50%; height: 50%; background-color: white;">
+                        CATEGORY C
+                    </div>
+                </div>
+                <div class="category_content">
+                    <div class="category_D" style="width: 50%; height: 50%; background-color: white;">
+                        CATEGORY D
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="noti_div">
+
+    </div>
+
+    <script>
+        var notification_is_block = true;
+        var category_is_block = true;
+
+        function toggle_notification(){
+            if(notification_is_block){
+                // $(".noti_div").css({
+                //     'display' : 'block'
+                // });
+                $(".noti_div").fadeIn(500);
+                notification_is_block = false;
+            }
+            else {
+                // $(".noti_div").css({
+                //     'display' : 'none'
+                // });
+                $(".noti_div").fadeOut(500);
+                notification_is_block = true;
+            }
+        }
+
+        function toggle_category(){
+            if(category_is_block){
+                //$(".category_div").fadeIn(500);
+                $(".category_div").animate({
+                    'right' : '0%'
+                });
+                category_is_block = false;
+            }
+            else {
+                //$(".category_div").fadeOut(500);
+                $(".category_div").animate({
+                    'right' : '-30%'
+                });
+                category_is_block = true;
+            }
+        }
+    </script>
+</body>
+</html>
