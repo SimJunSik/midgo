@@ -17,7 +17,7 @@
 
         .top{
             width: 100%;
-            height: 20%;
+            height: 10%;
             position: relative;
             background-color: beige;
         }
@@ -79,13 +79,32 @@
             background-position: center;
         }
 
+        .middle_button{
+            width: 5vw;
+            height: 5vw;
+            background-color: transparent;
+            color : black;
+            position: absolute;
+            bottom: 1%;
+            left: 51%;
+            transform: translate(-50%,0%);
+            z-index: 100;
+            /* border: 2px solid white; */
+            border-radius: 10px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+            outline: none;
+        }
+
         .top_right_button_div{
             width: 40%;
             height: auto;
             background-color: transparent;
             position: relative;
-            top: 10%;
+            top: 40%;
             left: 20%;
+            transform: translate(0%, -50%);
         }
         
         .button {
@@ -101,24 +120,36 @@
         }
 
         #login_button{
-            width: 40%;
+            width: auto;
+            height: auto;
             position: relative;
             float: left;
             border-radius: 12px;
+            margin-right: 5%;
         }
 
         #join_button{
-            width: 40%;
+            width: auto;
+            height: auto;
+            position: relative;
+            float: left;
+            border-radius: 12px;
+            margin-right: 5%;
+        }
+
+        #mypage_button{
+            width: auto;
+            height: auto;
             position: relative;
             float: left;
             border-radius: 12px;
         }
 
         .noti_button_div{
-            width: 5vw;
-            height: 5vw;
+            width: 4vw;
+            height: 4vw;
             position: relative;
-            top : 10%;
+            top : 20%;
             left: 20%;
             -webkit-animation: bounce 1s infinite;
             background-color: transparent;
@@ -155,8 +186,8 @@
 
         .bottom{
             width: 100%;
-            height: 30%;
-            background-color: blue;
+            height: 10%;
+            background-color: transparent;
         }
 
         .bottom_text_div{
@@ -208,45 +239,35 @@
         <div class="top_center">
             <div class="top_center_text">
                 MIDGO<br>
-                <p style="font-size : 1rem; font-weight : 500;">
+                <!-- <p style="font-size : 1rem; font-weight : 500;">
                     <font color="pink">믿</font>고알아가는<font color="pink">꼬</font>미네
-                </p>
+                </p> -->
             </div>
         </div>
         <div class="top_right">
             <div class="top_right_button_div">
-                <button class="button" id="login_button">로그인</button>
-                <button class="button" id="join_button">회원가입</button>
-                <button class="button" id="category_button" onclick="toggle_category();">=</button>
+                <div id="login_button">로그인</div>
+                <div id="join_button">회원가입</div>
+                <div id="mypage_button">마이페이지</div>
+                <!-- <button class="button" id="category_button" onclick="toggle_category();">=</button> -->
             </div>
         </div>
     </div>
     <div class="middle">
         <div class="middle_image_div">
-
+            <img src="/static/image/home.png" class="middle_button">
         </div>
     </div>
 
-    <!-- <div class="bottom">
+    <div class="bottom">
         <div class="bottom_text_div">
                 <br>
                 “우리가 이 땅에서 고양이한테 어떻게 대해주느냐에 따라 천국에서의 위치가 달라진다." <br>
                 - 로버트 A. 하인라인 - <br>
-                
-                “고양이의 눈 속에는 세상 모든것이 있다.” <br>
-                “고양이와 함께 하는 시간은 절대 낭비되는 시간이 아니다.” <br>
-                - 콜렛 - <br>
-                
-                "만약 고양이가 나무에서 떨어지면 집 안에 들어가서 웃으라." <br>
-                - 패트리샤 히치콕- <br>
-                
-                "고양이는 꼭 사진찍기 불가능할 때만 가장 기묘하고, 흥미롭고, 아름다운 포즈를 취한다. <br>
-                그래서 고양이 달력에는 실망스럽게도 항상 대중용 포즈밖에 나와있지 않다." <br>
-                - J. R. 코울슨- <br>
         </div>
-    </div> -->
+    </div>
 
-    <div class="category_div">
+    <!-- <div class="category_div">
         <div class="category_content_div">
                 <div class="category_content">
                     <div class="category_A" style="width: 50%; height: 50%; background-color: white;">
@@ -268,7 +289,7 @@
                         CATEGORY D
                     </div>
                 </div>
-        </div>
+        </div> -->
     </div>
 
     <div class="noti_div">
@@ -281,17 +302,11 @@
 
         function toggle_notification(){
             if(notification_is_block){
-                // $(".noti_div").css({
-                //     'display' : 'block'
-                // });
-                $(".noti_div").fadeIn(500);
+                $(".noti_div").fadeIn(200);
                 notification_is_block = false;
             }
             else {
-                // $(".noti_div").css({
-                //     'display' : 'none'
-                // });
-                $(".noti_div").fadeOut(500);
+                $(".noti_div").fadeOut(200);
                 notification_is_block = true;
             }
         }
