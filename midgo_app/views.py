@@ -7,3 +7,7 @@ def index(request) :
     print(user.cats.all())
 
     return render(request, './index.html')
+
+def main(request) :
+
+    return render(request, './main.html')
