@@ -76,25 +76,33 @@ WSGI_APPLICATION = 'midgo.wsgi.application'
 
 import platform
 
-if platform.system() == 'Linux' :
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'midgodb',
-            'HOST': 'midgo-db.cvyej8u3xdxm.ap-northeast-2.rds.amazonaws.com',
-            'PORT': '5432',
-            'USER': 'junsik',
-            'PASSWORD': 'zapzap12'
-        }
-    }
+# if platform.system() == 'Linux' :
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': 'midgodb',
+#             'HOST': 'midgo-db.cvyej8u3xdxm.ap-northeast-2.rds.amazonaws.com',
+#             'PORT': '5432',
+#             'USER': 'junsik',
+#             'PASSWORD': 'zapzap12'
+#         }
+#     }
 
-else :
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
+# else :
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         }
+#     }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, '../midgo_db/db.sqlite3'),
     }
+}
+
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
