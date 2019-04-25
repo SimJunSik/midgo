@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137805801-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-137805801-1');
+    </script>
+
+    <style type="text/css">
+        html{
+            height:100%;
+            overflow: hidden;
+           
+        }
+        body{
+            height: 100%;
+            margin: 0%;
+            background-color:white;
+            overflow: hidden;
+
+        }
+
+        .top{
+            width:100%;
+            height:15%;
+            position: relative;
+            background-color:transparent;
+        }
+      
+        .top_sec_div{
+            width:100%;
+            height:100%;
+            position: relative;
+            background-color: transparent;
+            border-top:1px solid black;
+        }
+
+        .top_sec_content{
+            width:100%;
+            height:100%;
+            position: relative;
+            font-weight:500;
+            font-size:3.5rem;
+            text-align:center;
+        }
+
+
+        .middle{
+            width:100%;
+            height:85%;
+            position: relative;
+            background-color:pink;
+            border-top:1px solid black;
+        }
+
+        .unrecognized_user_div{
+            width: 100%;
+            height: 30%;
+            position: relative;
+            border-radius: 0%;
+            border: 1px solid black;
+            margin-bottom: 1%;
+        }
+
+        .unrecognized_user_owner_info_div{
+            width: 90%;
+            height: 30%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: brown;
+        }
+
+        .unrecognized_user_owner_id_div,
+        .unrecognized_user_owner_name_div,
+        .unrecognized_user_owner_phone_div,
+        .unrecognized_user_owner_addr_div,
+        .unrecognized_user_owner_email_div,
+        .unrecognized_user_owner_neutralization_div{
+            width: 49.9%;
+            height: 32%;
+            position: relative;
+            float: left;
+            background-color: turquoise;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+
+        .unrecognized_user_owner_info_domain{
+            width: 19.8%;
+            height: 100%;
+            position: relative;
+            float: left;
+            background-color: tomato;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+        }
+        .unrecognized_user_owner_info_content{
+            width: 79.9%;
+            height: 100%;
+            position: relative;
+            float: left;
+            background-color: teal;
+        }
+
+
+
+        .unrecognized_user_cat_info_cover{
+            width: 90%;
+            height: 65%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: goldenrod;
+        }
+        .unrecognized_user_cat_info_div{
+            width: 33.2%;
+            height: 100%;
+            position: relative;
+            float: left;
+            background-color: coral;
+            border-right: 1px solid black;
+        }
+        .unrecognized_user_cat_image_div{
+            width: 100%;
+            height: 40%;
+            position: relative;
+            background-color: slateblue;
+        }
+        .unrecognized_user_cat_image{
+            width: 3vw;
+            height: 3vw;
+        }
+
+        .unrecognized_user_cat_name_div,
+        .unrecognized_user_cat_gender_div,
+        .unrecognized_user_cat_birth_div,
+        .unrecognized_user_cat_age_div,
+        .unrecognized_user_cat_breed_div{
+            width: 20%;
+            height: 20%;
+            position: relative;
+            float: left;
+            background-color: sienna;
+        }
+
+        .unrecognized_user_cat_eatinghabit_div,
+        .unrecognized_user_cat_meet_div{
+            width: 49.8%;
+            height: 40%;
+            position: relative;
+            float: left;
+            background-color: chocolate;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            font-size: 0.5rem;
+        }
+
+        .unrecognized_user_cat_info_domain{
+            width: 49%;
+            height: 100%;
+            position: relative;
+            float: left;
+            background-color: tomato;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            font-size: 0.5rem;
+        }
+        .unrecognized_user_cat_info_content{
+            width: 49%;
+            height: 100%;
+            position: relative;
+            float: left;
+            background-color: teal;
+            font-size: 0.5rem;
+        }
+
+        .recognize_button_div{
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0%;
+            background-color: yellow;
+        }
+
+        .recognize_check_div{
+            width: 20%;
+            height: 20%;
+            position: fixed;
+            top : 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: violet;
+            z-index: 9999;
+            display: none;
+        }
+
+        .recognize_check_close{
+            width: auto;
+            height: auto;
+            position: absolute;
+            background-color: turquoise;
+            top: 0;
+            right: 0;
+            font-size: 1.5rem;
+        }
+
+        .recognize_check_info_div{
+            width: 50%;
+            height: 50%;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: yellowgreen;
+        }
+
+        .recognize_check_info_text_div{
+            width: 100%;
+            height: 70%;
+            position: relative;
+            background-color: red;
+        }
+
+        .recognize_check_info_text{
+            width: auto;
+            height: auto;
+            position: relative;
+            top: 50%;
+            transform: translate(0%, -50%);
+            text-align: center;
+        }
+
+        .recognize_check_info_button_div{
+            width: 100%;
+            height: 30%;
+            position: relative;
+            background-color: blue;
+            text-align: center;
+        }
+
+        #mask {  
+            position:absolute;  
+            left:0;
+            top:0;
+            z-index:9000;  
+            background-color:#000;  
+            display:none;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mask"></div>
+    <div class="recognize_check_div">
+        <div class="recognize_check_close">X</div>
+        <div class="recognize_check_info_div">
+            <div class="recognize_check_info_text_div">
+                <div class="recognize_check_info_text">
+                    ss
+                </div>
+            </div>
+            <div class="recognize_check_info_button_div">
+                <button onclick="recognize_check_confirm();">확인</button>
+                <button onclick="recognize_check_cancle();">취소</button>
+            </div>
+        </div>
+    </div>
+    <div class="top">
+        <div class="top_sec_div">
+            <div class="top_sec_content">
+                MIDGO<br>
+                <p style="font-size : 1rem; font-weight: 500;">
+                <font color="pink">믿</font>고알아가는<font color="pink">꼬</font>미네
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="middle">
+        {% for unrecognized_user in unrecognized_users %}
+            <div class="unrecognized_user_div">
+                <div class="recognize_button_div">
+                    <button class="recognize_button" id={{unrecognized_user.username}} onclick="open_recognize_check(this);">승인</button>
+                    <button class="recognize_button" id={{unrecognized_user.username}} onclick="open_unrecognize_check(this);">반려</button>
+                </div>
+
+                <div class="unrecognized_user_owner_info_div">
+                    <div class="unrecognized_user_owner_id_div">
+                        <div class="unrecognized_user_owner_info_domain">
+                            ID
+                        </div>
+                        <div class="unrecognized_user_owner_info_content">
+                            {{unrecognized_user.username}}
+                        </div>
+                    </div>
+                    <div class="unrecognized_user_owner_name_div">
+                        <div class="unrecognized_user_owner_info_domain">
+                            NAME
+                        </div>
+                        <div class="unrecognized_user_owner_info_content">
+                            {{unrecognized_user.name}}
+                        </div>
+                    </div>
+                    <div class="unrecognized_user_owner_phone_div">
+                        <div class="unrecognized_user_owner_info_domain">
+                            PHONE
+                        </div>
+                        <div class="unrecognized_user_owner_info_content">
+                            {{unrecognized_user.phone}}
+                        </div>
+                    </div>
+                    <div class="unrecognized_user_owner_addr_div">
+                        <div class="unrecognized_user_owner_info_domain">
+                            ADDR
+                        </div>
+                        <div class="unrecognized_user_owner_info_content">
+                            {{unrecognized_user.addr}}
+                        </div>
+                    </div>
+                    <div class="unrecognized_user_owner_email_div">
+                        <div class="unrecognized_user_owner_info_domain">
+                            EMAIL
+                        </div>
+                        <div class="unrecognized_user_owner_info_content">
+                            {{unrecognized_user.email}}
+                        </div>
+                    </div>
+                    <div class="unrecognized_user_owner_neutralization_div">
+                        <div class="unrecognized_user_owner_info_domain">
+                            NEUTRALIZATION
+                        </div>
+                        <div class="unrecognized_user_owner_info_content">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="unrecognized_user_cat_info_cover">
+                    {% for cat in unrecognized_user.cats.all %}
+                        <div class="unrecognized_user_cat_info_div">
+                            <div class="unrecognized_user_cat_image_div">
+                                <!-- <div class="unrecognized_user_cat_info_domain">
+                                    
+                                </div> -->
+                                <div class="unrecognized_user_cat_info_content">
+                                    <img class="unrecognized_user_cat_image" src="{{cat.image.url}}">
+                                </div>
+                            </div>
+
+                            <div class="unrecognized_user_cat_name_div">
+                                <div class="unrecognized_user_cat_info_domain">
+                                    NAME
+                                </div>
+                                <div class="unrecognized_user_cat_info_content">
+                                    {{cat.name}}
+                                </div>
+                            </div>
+                            <div class="unrecognized_user_cat_gender_div">
+                                <div class="unrecognized_user_cat_info_domain">
+                                    GENDER
+                                </div>
+                                <div class="unrecognized_user_cat_info_content">
+                                    {{cat.gender}}
+                                </div>
+                            </div>
+                            <div class="unrecognized_user_cat_birth_div">
+                                <div class="unrecognized_user_cat_info_domain">
+                                    BIRTH
+                                </div>
+                                <div class="unrecognized_user_cat_info_content">
+                                    {{cat.birth}}
+                                </div>
+                            </div>
+                            <div class="unrecognized_user_cat_age_div">
+                                <div class="unrecognized_user_cat_info_domain">
+                                    AGE
+                                </div>
+                                <div class="unrecognized_user_cat_info_content">
+                                    {{cat.age}}
+                                </div>
+                            </div>
+                            <div class="unrecognized_user_cat_breed_div">
+                                <div class="unrecognized_user_cat_info_domain">
+                                    BREED
+                                </div>
+                                <div class="unrecognized_user_cat_info_content">
+                                    {{cat.breed}}
+                                </div>
+                            </div>
+
+                            <div class="unrecognized_user_cat_eatinghabit_div">
+                                <div class="unrecognized_user_cat_info_domain">
+                                    EATINGHABIT
+                                </div>
+                                <div class="unrecognized_user_cat_info_content">
+                                    {{cat.eatinghabit}}
+                                </div>
+                            </div>
+                            <div class="unrecognized_user_cat_meet_div">
+                                <div class="unrecognized_user_cat_info_domain">
+                                    MEET
+                                </div>
+                                <div class="unrecognized_user_cat_info_content">
+                                    {{cat.meet}}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- <p>주인정보</p><br>
+            {{unrecognized_user.username}}<br>
+            <br>
+            <p>냥이정보</p><br>
+            {% for cat in unrecognized_user.cats.all %}
+                {{cat.name}}<br>
+            {% endfor %}
+            <br><br> -->
+        {% endfor %}
+    </div>
+
+    <script>
+        var selected_unrecognized_user_id = '';
+        var f = '';
+
+        function recognize_check_confirm(){
+            if(f == 'recognize'){
+                window.location.href = './recognize/' + selected_unrecognized_user_id + '/';
+            }
+            else if(f == 'unrecognize'){
+                window.location.href = './unrecognize/' + selected_unrecognized_user_id + '/';
+            }
+        }
+
+        function recognize_check_cancle(){
+            $('#mask, .recognize_check_div').hide();
+        }
+
+        function open_recognize_check(btn){
+            //alert("승인");
+            $(".recognize_check_div").css({
+                'display' : 'block'
+            });
+            $(".recognize_check_info_text").html(
+                btn.id + "님을 승인 하시겠습니까?"
+            );
+            selected_unrecognized_user_id = btn.id;
+            f = 'recognize';
+        }
+
+        function open_unrecognize_check(btn){
+            //alert("반려");
+            $(".recognize_check_div").css({
+                'display' : 'block'
+            });
+            $(".recognize_check_info_text").html(
+                btn.id + "님을 반려 하시겠습니까?"
+            );
+            selected_unrecognized_user_id = btn.id;
+            f = 'unrecognize';
+        }
+
+        function wrapWindowByMask(){
+            //화면의 높이와 너비를 구한다.
+            var maskHeight = $(document).height();  
+            var maskWidth = $(window).width();  
+            
+            //마스크의 높이와 너비를 화면 것으로 만들어 전체 화면을 채운다.
+            $('#mask').css({'width':maskWidth,'height':maskHeight});  
+            
+            //애니메이션 효과
+            $('#mask').fadeIn(200);      
+            //$('#mask').fadeTo("fast",0.2);    
+        }
+
+        $(document).ready(function(){
+            //검은 막 띄우기
+            $('.recognize_button').click(function(e){
+                e.preventDefault();
+                wrapWindowByMask();
+            });
+
+            //닫기 버튼을 눌렀을 때
+            $('.recognize_check_div .recognize_check_close').click(function (e) {  
+                //링크 기본동작은 작동하지 않도록 한다.
+                e.preventDefault();  
+                $('#mask, .recognize_check_div').hide();  
+            });       
+
+            //검은 막을 눌렀을 때
+            $('#mask').click(function () {  
+                $(this).hide();  
+                $('.recognize_check_div').hide();
+            });      
+        });
+    </script>
+</body>
+</html>

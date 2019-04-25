@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137805801-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-137805801-1');
+    </script>
+
+    <style type="text/css">
+        html{
+            height:100%;
+            overflow: hidden;
+           
+        }
+        body{
+            height: 100%;
+            margin: 0%;
+            background-color:white;
+            overflow: hidden;
+
+        }
+
+        .top{
+            width:100%;
+            height:15%;
+            position: relative;
+            background-color:transparent;
+        }
+      
+        .top_sec_div{
+            width:100%;
+            height:100%;
+            position: relative;
+            background-color: transparent;
+            border-top:1px solid black;
+        }
+
+        .top_sec_content{
+            width:100%;
+            height:100%;
+            position: relative;
+            font-weight:500;
+            font-size:3.5rem;
+            text-align:center;
+        }
+
+
+        .middle{
+            width:100%;
+            height:85%;
+            position: relative;
+            background-color:pink;
+            border-top:1px solid black;
+        }
+
+        .middle_user_list_div{
+            width: 10%;
+            height: auto;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div class="top_sec_div">
+            <div class="top_sec_content">
+                MIDGO<br>
+                <p style="font-size : 1rem; font-weight: 500;">
+                <font color="pink">믿</font>고알아가는<font color="pink">꼬</font>미네
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="middle">
+        {% for user in unrecognized_users %}
+            <div class="middle_user_list_div" id="{{user.username}}" onclick="go_join_info(this);">
+                {{user.username}}<br>
+                {{user.name}}
+            </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        function go_join_info(this_div){
+            // console.log(this_div.id);
+            window.location.href = '/recognizeUser/' + String(this_div.id) + '/';
+        }
+    </script>
+</body>
+</html>

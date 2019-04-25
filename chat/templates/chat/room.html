@@ -1,0 +1,111 @@
+<!-- chat/templates/chat/room.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Chat Room</title>
+    <style>
+        body{
+            margin: 0;
+            overflow: hidden;
+        }
+        .other_message{
+            width: 99%;
+            height: auto;
+            position: relative;
+            text-align: left;
+            background-color: red;
+        }
+        .my_message{
+            width: 99%;
+            height: auto;
+            position: relative;
+            text-align: right;
+            background-color: blue;
+        }
+
+        .chat_input_div{
+            width: 100%;
+            height: auto;
+            position: absolute;
+            bottom: 0%;
+        }
+        #chat-message-input{
+            width: 80%;
+            position: relative;
+        }
+        #chat-message-submit{
+            width: 15%;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="user_id" hidden value="{{user.username}}">
+    <div id="chat-log">
+        {% for test in tests %}
+            {% if test.sender == user.username %}
+                <div class="my_message">
+                    {{test.text}}<br>
+                </div>
+            {% else %}
+                <div class="other_message">
+                    {{test.text}}<br>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div><br/>
+    <div class="chat_input_div">
+        <input id="chat-message-input" type="text"/>
+        <input id="chat-message-submit" type="button" value="Send"/>
+    </div>
+    <!-- <iframe src="http://www.homejjang.com" frameborder="0" width="600" height="300"></iframe> -->
+</body>
+
+<script>
+    var roomName = {{ room_name_json }};
+
+    var chatSocket = new WebSocket(
+        'ws://' + window.location.host +
+        '/ws/chat/' + roomName + '/');
+
+    chatSocket.onmessage = function(e) {
+        var user_id = $("#user_id").val();
+        var data = JSON.parse(e.data);
+        var message = data['message'];
+        var sender = data['sender'];
+        console.log(message, sender);
+        // document.querySelector('#chat-log').value += (message + '\n');
+        if(sender == user_id){
+            $("#chat-log").append('<div class="my_message">' + message + '<br></div>');
+        }
+        else {
+            $("#chat-log").append('<div class="other_message">' + message + '<br></div>');
+        }
+    };
+
+    chatSocket.onclose = function(e) {
+        console.error('Chat socket closed unexpectedly');
+    };
+
+    document.querySelector('#chat-message-input').focus();
+    document.querySelector('#chat-message-input').onkeyup = function(e) {
+        if (e.keyCode === 13) {  // enter, return
+            document.querySelector('#chat-message-submit').click();
+        }
+    };
+
+    document.querySelector('#chat-message-submit').onclick = function(e) {
+        var messageInputDom = document.querySelector('#chat-message-input');
+        var message = messageInputDom.value;
+        chatSocket.send(JSON.stringify({
+            'message': message
+        }));
+
+        messageInputDom.value = '';
+    };
+</script>
+
+</html>

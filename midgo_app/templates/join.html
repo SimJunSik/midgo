@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137805801-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-137805801-1');
+    </script>
+
+    <style type="text/css">
+        html{
+            height:100%;
+            overflow: hidden;
+           
+        }
+        body{
+            height: 100%;
+            margin: 0%;
+            background-color:white;
+            overflow: hidden;
+
+        }
+
+        .top{
+            width:100%;
+            height:15%;
+            position: relative;
+            background-color:transparent;
+        }
+
+        .middle{
+            width:100%;
+            height:85%;
+            position: relative;
+            background-color:pink;
+            border-top:1px solid black;
+        }
+      
+
+        .top_sec_div{
+            width:100%;
+            height:100%;
+            position: relative;
+            background-color: transparent;
+            border-top:1px solid black;
+        }
+
+        .top_sec_content{
+            width:100%;
+            height:100%;
+            position: relative;
+            font-weight:500;
+            font-size:3.5rem;
+            text-align:center;
+        }
+
+        .middle_form_div{
+            width:40%;
+            height:90%;
+            position: relative;
+            background-color: beige;
+            left:50%;
+            transform: translate(-50%,-50%);
+            border-radius: 10%;
+            top:50%;
+            display: none;
+        }
+
+        .middle_owner_info_div{
+            width:90%;
+            height:90%;
+            position: relative;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            background-color: aqua; 
+        }
+
+        .middle_owner_info_title{
+            width:100%;
+            height:10%;
+            position: relative;
+            background-color: brown;
+            
+        }
+
+        .middle_owner_info_title_text{
+            width:100%;
+            height:auto;
+            text-align: center;
+            position: relative;
+            font-size: 1.5rem;
+            font-weight: 400;
+            top:50%;
+            transform: translate(0%,-50%);
+        }
+        
+        .middle_owner_info_content{
+            width:100%;
+            height:80%;
+            position: relative;
+            background-color: violet;
+        }
+
+        .middle_owner_info_id{
+            width:100%;
+            height:10%;
+            position: relative;
+            background-color: blue;
+        }
+
+        .middle_owner_info_password{
+            width:100%;
+            height:20%;
+            position: relative;
+            background-color:red;
+        }
+
+        .middle_owner_info_name{
+            width:100%;
+            height:10%;
+            position: relative;
+            background-color:orange;
+        }
+
+        .middle_owner_info_address{
+            width:100%;
+            height:10%;
+            position: relative;
+            background-color:yellowgreen;
+        }
+
+        .middle_owner_info_phonenum{
+            width:100%;
+            height:10%;
+            position: relative;
+            background-color: teal;
+        }
+
+        .middle_owner_info_email{
+            width:100%;
+            height:10%;
+            position: relative;
+            background-color:lemonchiffon;
+        }
+
+        .middle_owner_info_domain{
+            width:20%;
+            height:100%;
+            position: relative;
+            float:left;
+            background-color: blueviolet;
+        }
+
+        .middle_owner_info_value{
+            width:80%;
+            height:100%;
+            position: relative;
+            float:left;
+            background-color: gold;            
+        }
+
+        .middle_select_div{
+            width:10%;
+            height:10%;
+            position: absolute;
+            background-color:tomato;
+            display: none;
+        }
+
+        .middle_direction1_div{
+            width:auto;
+            height:auto;
+            position: absolute;
+            background-color: yellow;
+            left: 0%;
+            top:50%;
+            transform:translate(0%,-50%);
+            display:none;
+        }
+
+        .middle_direction2_div{
+            width: auto;
+            height: auto;
+            position: absolute;
+            background-color: yellowgreen;
+            right:0%;
+            top:50%;
+            transform:translate(0%,-50%);
+            display: none;
+            
+        }
+
+        
+        
+
+        .middle_cat_info_div{
+            width:90%;
+            height:90%;
+            position: relative;
+            background-color: hotpink;
+            display: none;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+        
+        .middle_cat_info_title{
+            width:100%;
+            height:10%;
+            position: relative;
+            background-color: brown;
+            
+        }
+
+        .middle_cat_info_title_text{
+            width:100%;
+            height:auto;
+            text-align: center;
+            position: relative;
+            font-size: 1.5rem;
+            font-weight: 400;
+            top:50%;
+            transform: translate(0%,-50%);
+        }
+
+       .middle_cat_info_content{
+            width:100%;
+            height:80%;
+            position: relative;
+            background-color: violet;
+       }
+        
+       .middle_cat_info_img{
+            width:100%;
+            height:25%;
+            position: relative;
+            background-color: aqua;
+       }
+       
+       .middle_cat_info_domain{
+            width:20%;
+            height:100%;
+            position: relative;
+            float:left;
+            background-color: olive;
+       }
+
+       .middle_cat_info_value{
+            width:80%;
+            height:100%;
+            position: relative;
+            float:left;
+            background-color: yellow;
+       }
+
+       #cat_img_preview1,#cat_img_preview2,#cat_img_preview3{
+            widows: 5vw;
+            height: 5vw;
+            display:none;
+       }
+
+       .middle_cat_info_sec{
+           width:100%;
+           height:10%;
+           position:relative;
+       }
+
+       .middle_cat_info_name{
+            width:50%;
+            height:100%;
+            position: relative;
+            background-color:red;
+            float:left;
+       }
+
+       .middle_cat_info_gender{
+            width:50%;
+            height:100%;
+            position: relative;
+            background-color:blue;
+            float:left;
+       }
+
+       .middle_cat_info_third{
+           width:100%;
+           height:10%;
+           position:relative;
+       }
+
+       .middle_cat_info_birth{
+            width:50%;
+            height:100%;
+            position: relative;
+            float:left;
+       }
+
+       .middle_cat_info_input{
+            width:80%;
+            height:60%;
+            position: relative;
+       }
+
+       .middle_cat_info_breed{
+            width:50%;
+            height:100%;
+            position: relative;
+            float:left;
+       }
+
+       .middle_cat_info_eatinghabit{
+            width:100%;
+            height:10%;
+            position: relative;
+       }
+
+       .middle_cat_info_health{
+            width:100%;
+            height:10%;
+            position: relative;
+       }
+
+       .middle_cat_info_neutral{
+            width:100%;
+            height:10%;
+            position: relative;
+       }
+
+       .middle_cat_info_route{
+             width:100%;
+            height:10%;
+            position: relative;
+       }
+
+       .middle_cat_info_reason{
+            width:100%;
+            height:10%;
+            position: relative;
+       }
+
+       .middle_cat_info_genderimg{
+           width:2vw;
+           height:2vw;
+           position: relative;
+       }
+
+      .middle_cat_info_meet{
+         width:100%;
+        height:20%;
+        position: relative;
+      }
+       
+       .middle_cat_info_textarea{
+           width:95%;
+           height:80%;
+       }
+
+        .middle_form_cat_button_div{
+            width: 17vw;
+            height: auto;
+            position: relative;
+            left:50%;
+            transform: translate(-50%,0%);
+            display: none;
+        }
+
+        #join_button{
+            width: 8vw;
+            height: 1.5vw;
+            border-radius: 5%;
+            background-color: orange;
+            border:none;
+            outline: none;
+            font-size:0.8rem;
+            position: relative;
+            float: left;
+            margin-left: 1vw;
+        }
+
+        #before_button{
+            width: 8vw;
+            height: 1.5vw;
+            border-radius: 5%;
+            background-color: orange;
+            border:none;
+            outline: none;
+            font-size:0.8rem;
+            position: relative;
+            float: left;
+        }
+
+       #next_button{
+        width: 8vw;
+        height: 1.5vw;
+        border-radius: 5%;
+        background-color: orange;
+        border:none;
+        outline: none;
+        font-size:0.8rem;
+        position: relative;
+        left:50%;
+        transform: translate(-50%,0%);
+       }
+
+       
+       .middle_agreement_div{
+            width: 30%;
+            height: 40%;
+            position: relative;
+            background-color: cadetblue;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .middle_agreement_title_div{
+            width: 100%;
+            height: 10%;
+            position: relative;
+            top: 0%;
+            background-color: brown;
+        }
+
+        .middle_agreement_title_text{
+            width: 100%;
+            height: auto;
+            font-size: 1rem;
+            font-weight: 400;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+
+        .middle_agreement_text_div{
+            width: 90%;
+            height: 50%;
+            position: relative;
+            background-color: white;
+            margin-top: 5%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            overflow: scroll;
+        }
+
+        .middle_agreement_check_div{
+            width: 100%;
+            height: 10%;
+            position: relative;
+            background-color: darkred;
+            margin-top: 5%;
+        }
+
+        .middle_agreement_check_content{
+            width: 20%;
+            height: 100%;
+            position: relative;
+            background-color: coral;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .middle_agreement_check_button_div{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            float: left;
+            background-color: violet;
+        }
+
+        .middle_agreement_check_button{
+            width: 2vw;
+            height: 2vw;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .middle_agreement_check_text_div{
+            width: 80%;
+            height: 100%;
+            position: relative;
+            float: left;
+            background-color: chocolate;
+        }
+
+        .middle_agreement_check_text{
+            width: 100%;
+            height: auto;
+            position: relative;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .middle_go_join_div{
+            width: 100%;
+            height: 10%;
+            position: relative;
+            background-color: cyan;
+        }
+
+        .middle_go_join_button{
+            width: 6vw;
+            height: 2vw;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10%;
+            border : none;
+            outline: none;
+            display : none;
+        }
+
+        .middle_alert_div{
+            width: 15%;
+            height: 50%;
+            position: absolute;
+            top: 50%;
+            left: 1%;
+            transform: translateY(-50%);
+            background-color: tomato;
+        }
+
+        .middle_alert_content{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-color: violet;
+        }
+
+        .middle_alert_text_div{
+            width: 100%;
+            height: 50%;
+            position: relative;
+            background-color: teal;
+            font-size: 1.5rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .middle_alert_image_div{
+            width: 100%;
+            height: 50%;
+            position: relative;
+            background-color: steelblue;
+            text-align: center;
+        }
+
+        .middle_alert_image{
+            width: auto;
+            height: 100%;
+            position: relative;
+        }
+    </style>
+
+
+<!-- check box -->
+<style>
+        /* The container */
+        .container {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 1rem;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            width: 50%;
+            height: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #2196F3;
+        }
+
+        /* Hide the browser's default checkbox */
+        .container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        /* Create a custom checkbox */
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+        }
+
+        /* On mouse-over, add a grey background color */
+        .container:hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+
+        /* When the checkbox is checked, add a blue background */
+        .container input:checked ~ .checkmark {
+            background-color: #2196F3;
+        }
+
+        /* Create the checkmark/indicator (hidden when not checked) */
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the checkmark when checked */
+        .container input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        /* Style the checkmark/indicator */
+        .container .checkmark:after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div class="top_sec_div">
+            <div class="top_sec_content">
+                MIDGO<br>
+                <p style="font-size : 1rem; font-weight: 500;">
+                <font color="pink">믿</font>고알아가는<font color="pink">꼬</font>미네
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="middle">
+
+        <!-- <div class="middle_select_div">
+            <button onclick="open_owner();">집사</button>
+            <button onclick="open_cat();">냥이</button>
+        </div> -->
+
+        <div class="middle_alert_div">
+            <div class="middle_alert_content">
+                <div class="middle_alert_text_div">
+                        <font style="font-size: 2rem; color: red">※주의!※</font>
+                        <br>
+                        가입 심사 절차가 있을 예정이오니, 
+                        <br>
+                        예민하신 분들은 나가주시길 바랍니다.
+                </div>
+                <div class="middle_alert_image_div">
+                    <img class="middle_alert_image" src="/static/image/ryan_icon.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="middle_agreement_div">
+            <div class="middle_agreement_title_div">
+                <div class="middle_agreement_title_text">
+                    개인정보 수집  및 이용에 대한 안내
+                </div>
+            </div>
+            <div class="middle_agreement_text_div">
+                정보통신망법 규정에 따라 네이버에 회원가입 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.
+                <br>
+                1. 수집하는 개인정보<br>
+                이용자는 회원가입을 하지 않아도 정보 검색, 뉴스 보기 등 대부분의 네이버 서비스를 회원과 동일하게 이용할 수 있습니다. 이용자가 메일, 캘린더, 카페, 블로그 등과 같이 개인화 혹은 회원제 서비스를 이용하기 위해 회원가입을 할 경우, 네이버는 서비스 이용을 위해 필요한 최소한의 개인정보를 수집합니다.
+                <br>
+                회원가입 시점에 네이버가 이용자로부터 수집하는 개인정보는 아래와 같습니다.
+                <br>
+                - 회원 가입 시에 ‘아이디, 비밀번호, 이름, 생년월일, 성별, 가입인증 휴대전화번호’를 필수항목으로 수집합니다. 만약 이용자가 입력하는 생년월일이 만14세 미만 아동일 경우에는 법정대리인 정보(법정대리인의 이름, 생년월일, 성별, 중복가입확인정보(DI), 휴대전화번호)를 추가로 수집합니다. 그리고 선택항목으로 이메일 주소를 수집합니다.
+                <br>
+                - 단체아이디로 회원가입 시 단체아이디, 비밀번호, 단체이름, 이메일주소, 가입인증 휴대전화번호를 필수항목으로 수집합니다. 그리고 단체 대표자명을 선택항목으로 수집합니다.
+                <br>
+                서비스 이용 과정에서 이용자로부터 수집하는 개인정보는 아래와 같습니다.
+                <br>
+                NAVER 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 과정에서 해당 서비스의 이용자에 한해 추가 개인정보 수집이 발생할 수 있습니다. 추가로 개인정보를 수집할 경우에는 해당 개인정보 수집 시점에서 이용자에게 ‘수집하는 개인정보 항목, 개인정보의 수집 및 이용목적, 개인정보의 보관기간’에 대해 안내 드리고 동의를 받습니다.
+            </div>
+            <div class="middle_agreement_check_div">
+                <div class="middle_agreement_check_content">
+                    <div class="middle_agreement_check_button_div">
+                        <label class="container"> 동의합니다
+                            <input type="checkbox" class="agreement_checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <!-- <div class="middle_agreement_check_text_div">
+                        <div class="middle_agreement_check_text">
+                            동의합니다
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="middle_go_join_div">
+                <button class="middle_go_join_button" onclick="go_join();">가입하러가기</button>
+            </div>
+        </div>
+
+        <form class="middle_form_div"method="POST" name="frm" action="./check_join/" enctype="multipart/form-data" onsubmit="return join_check();">
+            {% csrf_token %}
+            <div class="middle_direction1_div">
+                <button type="button" onclick="open_before();"><</button>
+            </div>
+    
+            <div class="middle_direction2_div">
+                <button type="button" onclick="open_next();">></button>
+            </div>
+
+            <div class="middle_owner_info_div">
+                <div class="middle_owner_info_title">
+                    <div class="middle_owner_info_title_text">
+                        집사 정보 
+                    </div>
+                </div>
+
+                <div class="middle_owner_info_content">
+                    <div class="middle_owner_info_id">
+                        <div class="middle_owner_info_domain">
+                            ID
+                        </div>
+                        <div class="middle_owner_info_value">
+                            <input type="text" id="owner_id" name="owner_id" required>
+                            <button type="button" onclick="user_id_check();">중복체크</button>
+                        </div>
+                    </div>
+
+                    <div class="middle_owner_info_password">
+                        <div class="middle_owner_info_domain">
+                            PASSWORD<br>
+                            REAPSSWORD
+                        </div>
+
+                        <div class="middle_owner_info_value">
+                            <input type="password" id="owner_password" name="owner_password" required placeholder="숫자/영어 혼합 8~15자">
+                            <br>
+                            <input type="password" id="owner_repassword" name="owner_repassword" required placeholder="숫자/영어 혼합 8~15자">
+                            <br>
+                            
+                            <div class="middle_owner_info_check_password">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="middle_owner_info_name">
+                        <div class="middle_owner_info_domain">
+                            NAME
+                        </div>
+                        <div class="middle_owner_info_value">
+                            <input type="text" id="owner_name" name="owner_name" required>
+                        </div>
+                    </div>
+
+                    <div class="middle_owner_info_address">
+                        <div class="middle_owner_info_domain">
+                            ADDRESS
+                        </div>
+
+                        <div class="middle_owner_info_value">
+                            <input type="text" id="owner_address" name="owner_address" required>
+                        </div>
+                    </div>
+                    <div class="middle_owner_info_phonenum">
+                        <div class="middle_owner_info_domain">
+                            PHONE
+                        </div>
+
+                        <div class="middle_owner_info_value">
+                            <input type="text" id="owner_phonenum" name="owner_phonenum" required>
+                        </div>
+                    </div>
+
+                    <div class="middle_owner_info_email">
+                        <div class="middle_owner_info_domain">
+                            E-MAIL
+                        </div>
+
+                        <div class="middle_owner_info_value">
+                            <input type="text" id="owner_email" name="owner_email" required>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div id="middle_cat_info_div1" class="middle_cat_info_div">
+                <div class="middle_cat_info_title">
+                    <div class="middle_cat_info_title_text">
+                        냥이1 정보 
+                    </div>
+                </div>
+
+                <div class="middle_cat_info_content">
+                    <div class="middle_cat_info_img">
+                        <div class="middle_cat_info_domain">
+                            사진
+                        </div>
+                        <div class="middle_cat_info_value">
+                            <input type="file" id="cat_img1" name="cat_img">
+                            <img id="cat_img_preview1" src="">
+                        </div>
+                    </div>
+
+                    <div class="middle_cat_info_sec">
+                        <div class="middle_cat_info_name" >
+                            <div class="middle_cat_info_domain" style="width:40%;">
+                                이름
+                            </div>
+                            <div class="middle_cat_info_value"  style="width:60%;">
+                                <input  class ="middle_cat_info_input" type="text" id="cat_name1" name="cat_name" required>
+                            </div>
+                        </div>
+
+                        <div class="middle_cat_info_gender">
+                            <div class="middle_cat_info_domain" style="width:40%;">
+                                성별
+                            </div>
+
+                            <div class="middle_cat_info_value" style="width:60%;">
+                                <input type="radio" name="cat_gender1" checked="checked" value="남아"/><img class="middle_cat_info_genderimg" src="/static/image/male_icon.png">
+                                <input type="radio" name="cat_gender1" value="여아"/><img class="middle_cat_info_genderimg" src="/static/image/female_icon.png">
+                            </div>
+
+                         </div>
+                     </div>
+                   
+                     <div class="middle_cat_info_third">
+                        <div class="middle_cat_info_birth">
+                            <div class="middle_cat_info_domain"  style="width:40%;">
+                                생일
+                            </div> 
+                            <div class="middle_cat_info_value"  style="width:60%;">
+                                <input class ="middle_cat_info_input" type= "date" id="cat_birth" name="cat_birth"  required>
+                            </div>   
+                        </div>
+
+                        <div class="middle_cat_info_breed">
+                            <div class="middle_cat_info_domain" style="width:40%;">
+                                종류
+                            </div>
+                            <div class="middle_cat_info_value" style="width:60%;">
+                                <input  class ="middle_cat_info_input" type="text" id="cat_breed" name="cat_breed" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="middle_cat_info_eatinghabit">
+                        <div class="middle_cat_info_domain">
+                            식습관 
+                        </div>
+                        <div class="middle_cat_info_value">
+                            <input type="checkbox" name="cat_eatinghabit1" value="A"/>A
+                            <input type="checkbox" name="cat_eatinghabit1" value="B"/>B
+                            <input type="checkbox" name="cat_eatinghabit1" value="C"/>C
+                            <input type="checkbox" name="cat_eatinghabit1" value="D"/>D
+                            <input type="checkbox" name="cat_eatinghabit1" value="E"/>E
+                            <input type="checkbox" name="cat_eatinghabit1" value="F"/>해당사항 없음
+                        </div>
+                    </div>
+
+                    <div class="middle_cat_info_health">
+                        <div class="middle_cat_info_domain">
+                            건강사항
+                        </div>
+                        <div class="middle_cat_info_value">
+                            <input type="checkbox" name="cat_health1" value="A"/>A
+                            <input type="checkbox" name="cat_health1" value="B"/>B
+                            <input type="checkbox" name="cat_health1" value="C"/>C
+                            <input type="checkbox" name="cat_health1" value="D"/>D
+                            <input type="checkbox" name="cat_health1" value="E"/>E
+                            <input type="checkbox" name="cat_health1" value="F"/>해당사항 없음
+                        </div>
+                    </div>
+
+                    <div class="middle_cat_info_neutral">
+                        <div class="middle_cat_info_domain">
+                            중성화 찬반
+                        </div>
+                        <div class="middle_cat_info_value">
+                            <input type="radio" name="cat_neutral" value="찬성"/>찬성
+                            <input type="radio" name="cat_neutral" value="반대"/>반대
+                        </div>
+                    </div>
+
+                    <div class="middle_cat_info_route">
+                        <div class="middle_cat_info_domain">
+                            입양 경로
+                        </div>
+                        <div class="middle_cat_info_value">
+                            <input class="middle_cat_info_input" type="text" name="cat_route" >
+                        </div>
+                    </div>
+
+                    <div class="middle_cat_info_meet">
+                        <div class="middle_cat_info_domain">
+                             반려 이유 
+                        </div>
+                        <div class="middle_cat_info_value">
+                            <textarea class="middle_cat_info_textarea" name="cat_meet" rows="5" cols="20" required></textarea>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div  id="middle_cat_info_div2" class="middle_cat_info_div">
+                <div class="middle_cat_info_title">
+                    <div class="middle_cat_info_title_text">
+                        냥이2 정보 
+                    </div>
+                </div>
+
+                <div class="middle_cat_info_content">
+                    <div class="middle_cat_info_img">
+                        <div class="middle_cat_info_domain">
+                            사진
+                        </div>
+                        <div class="middle_cat_info_value">
+                            <input type="file" id="cat_img2" name="cat_img">
+                            <img id="cat_img_preview2" src="">
+                        </div>
+                    </div>
+
+                    <div class="middle_cat_info_sec">
+                        <div class="middle_cat_info_name" >
+                            <div class="middle_cat_info_domain" style="width:40%;">
+                                이름
+                            </div>
+                            <div class="middle_cat_info_value"  style="width:60%;">
+                                <input  class ="middle_cat_info_input" type="text" id="cat_name" name="cat_name">
+                            </div>
+                        </div>
+
+                        <div class="middle_cat_info_gender">
+                            <div class="middle_cat_info_domain" style="width:40%;">
+                                성별
+                            </div>
+
+                            <div class="middle_cat_info_value" style="width:60%;">
+                                <input type="radio" name="cat_gender2" checked="checked" value="남아"/><img class="middle_cat_info_genderimg" src="/static/image/male_icon.png">
+                                <input type="radio" name="cat_gender2" value="여아"/><img class="middle_cat_info_genderimg" src="/static/image/female_icon.png">
+                            </div>
+
+                         </div>
+                     </div>
+                   
+                     <div class="middle_cat_info_third">
+                        <div class="middle_cat_info_birth">
+                            <div class="middle_cat_info_domain"  style="width:40%;">
+                                생일
+                            </div> 
+                            <div class="middle_cat_info_value"  style="width:60%;">
+                                <input class ="middle_cat_info_input" type= "date" id="cat_birth" name="cat_birth">
+                            </div>   
+                        </div>
+
+                        <div class="middle_cat_info_breed">
+                            <div class="middle_cat_info_domain" style="width:40%;">
+                                종류
+                            </div>
+                            <div class="middle_cat_info_value" style="width:60%;">
+                                <input  class ="middle_cat_info_input" type="text" id="cat_breed" name="cat_breed">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="middle_cat_info_eatinghabit">
+                        <div class="middle_cat_info_domain">
+                            식습관 
+                        </div>
+                        <div class="middle_cat_info_value">
+                            <input type="checkbox" name="cat_eatinghabit2" value="A"/>A
+                            <input type="checkbox" name="cat_eatinghabit2" value="B"/>B
+                            <input type="checkbox" name="cat_eatinghabit2" value="C"/>C
+                            <input type="checkbox" name="cat_eatinghabit2" value="D"/>D
+                            <input type="checkbox" name="cat_eatinghabit2" value="E"/>E
+                            <input type="checkbox" name="cat_eatinghabit2" value="F"/>해당사항 없음
+                        </div>
+                    </div>
+
+                    <div class="middle_cat_info_health">
+                        <div class="middle_cat_info_domain">
+                            건강사항
+                        </div>
+                        <div class="middle_cat_info_value">
+                            <input type="checkbox" name="cat_health2" value="A"/>A
+                            <input type="checkbox" name="cat_health2" value="B"/>B
+                            <input type="checkbox" name="cat_health2" value="C"/>C
+                            <input type="checkbox" name="cat_health2" value="D"/>D
+                            <input type="checkbox" name="cat_health2" value="E"/>E
+                            <input type="checkbox" name="cat_health2" value="F"/>해당사항 없음
+                        </div>
+                    </div>
+
+                    <div class="middle_cat_info_neutral">
+                        <div class="middle_cat_info_domain">
+                            중성화 찬반
+                        </div>
+                        <div class="middle_cat_info_value">
+                            <input type="radio" name="cat_neutral" value="찬성"/>찬성
+                            <input type="radio" name="cat_neutral" value="반대"/>반대
+                        </div>
+                    </div>
+
+                    <div class="middle_cat_info_route">
+                        <div class="middle_cat_info_domain">
+                            입양 경로
+                        </div>
+                        <div class="middle_cat_info_value">
+                            <input class="middle_cat_info_input" type="text" name="cat_route">
+                        </div>
+                    </div>
+
+                    <div class="middle_cat_info_meet">
+                        <div class="middle_cat_info_domain">
+                             반려 이유 
+                        </div>
+                        <div class="middle_cat_info_value">
+                            <textarea class="middle_cat_info_textarea" name="cat_meet" rows="5" cols="20"></textarea>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div  id="middle_cat_info_div3" class="middle_cat_info_div">
+                <div class="middle_cat_info_title">
+                    <div class="middle_cat_info_title_text">
+                        냥이3 정보 
+                    </div>
+                </div>
+
+                <div class="middle_cat_info_content">
+                    <div class="middle_cat_info_img">
+                        <div class="middle_cat_info_domain">
+                            사진
+                        </div>
+                        <div class="middle_cat_info_value">
+                            <input type="file" id="cat_img3" name="cat_img">
+                            <img id="cat_img_preview3" src="">
+                        </div>
+                    </div>
+
+                    <div class="middle_cat_info_sec">
+                        <div class="middle_cat_info_name" >
+                            <div class="middle_cat_info_domain" style="width:40%;">
+                                이름
+                            </div>
+                            <div class="middle_cat_info_value"  style="width:60%;">
+                                <input  class ="middle_cat_info_input" type="text" id="cat_name" name="cat_name">
+                            </div>
+                        </div>
+
+                        <div class="middle_cat_info_gender">
+                            <div class="middle_cat_info_domain" style="width:40%;">
+                                성별
+                            </div>
+
+                            <div class="middle_cat_info_value" style="width:60%;">
+                                <input type="radio" name="cat_gender3" checked="checked" value="남아"/><img class="middle_cat_info_genderimg" src="/static/image/male_icon.png">
+                                <input type="radio" name="cat_gender3" value="여아"/><img class="middle_cat_info_genderimg" src="/static/image/female_icon.png">
+                            </div>
+
+                         </div>
+                     </div>
+                   
+                     <div class="middle_cat_info_third">
+                        <div class="middle_cat_info_birth">
+                            <div class="middle_cat_info_domain"  style="width:40%;">
+                                생일
+                            </div> 
+                            <div class="middle_cat_info_value"  style="width:60%;">
+                                <input class ="middle_cat_info_input" type= "date" id="cat_birth" name="cat_birth">
+                            </div>   
+                        </div>
+
+                        <div class="middle_cat_info_breed">
+                            <div class="middle_cat_info_domain" style="width:40%;">
+                                종류
+                            </div>
+                            <div class="middle_cat_info_value" style="width:60%;">
+                                <input  class ="middle_cat_info_input" type="text" id="cat_breed" name="cat_breed">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="middle_cat_info_eatinghabit">
+                        <div class="middle_cat_info_domain">
+                            식습관 
+                        </div>
+                        <div class="middle_cat_info_value">
+                            <input type="checkbox" name="cat_eatinghabit3" value="A"/>A
+                            <input type="checkbox" name="cat_eatinghabit3" value="B"/>B
+                            <input type="checkbox" name="cat_eatinghabit3" value="C"/>C
+                            <input type="checkbox" name="cat_eatinghabit3" value="D"/>D
+                            <input type="checkbox" name="cat_eatinghabit3" value="E"/>E
+                            <input type="checkbox" name="cat_eatinghabit3" value="F"/>해당사항 없음
+                        </div>
+                    </div>
+
+                    <div class="middle_cat_info_health">
+                        <div class="middle_cat_info_domain">
+                            건강사항
+                        </div>
+                        <div class="middle_cat_info_value">
+                            <input type="checkbox" name="cat_health3" value="A"/>A
+                            <input type="checkbox" name="cat_health3" value="B"/>B
+                            <input type="checkbox" name="cat_health3" value="C"/>C
+                            <input type="checkbox" name="cat_health3" value="D"/>D
+                            <input type="checkbox" name="cat_health3" value="E"/>E
+                            <input type="checkbox" name="cat_health3" value="F"/>해당사항 없음
+                        </div>
+                    </div>
+
+                    <div class="middle_cat_info_neutral">
+                        <div class="middle_cat_info_domain">
+                            중성화 찬반
+                        </div>
+                        <div class="middle_cat_info_value">
+                            <input type="radio" name="cat_neutral" value="찬성"/>찬성
+                            <input type="radio" name="cat_neutral" value="반대"/>반대
+                        </div>
+                    </div>
+
+                    <div class="middle_cat_info_route">
+                        <div class="middle_cat_info_domain">
+                            입양 경로
+                        </div>
+                        <div class="middle_cat_info_value">
+                            <input class="middle_cat_info_input" type="text" name="cat_route">
+                        </div>
+                    </div>
+
+                    <div class="middle_cat_info_meet">
+                        <div class="middle_cat_info_domain">
+                             반려 이유 
+                        </div>
+                        <div class="middle_cat_info_value">
+                            <textarea class="middle_cat_info_textarea" name="cat_meet" rows="5" cols="20"></textarea>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="middle_form_cat_button_div">
+            <button type="button" id="before_button" onclick="open_owner();">
+                집사정보
+            </button>
+            <button type="submit" id="join_button">
+                가입하기 
+            </button>
+        </div>
+        <button type="button" onclick="open_cat();" id="next_button">
+            다음
+        </button>
+    </form>
+
+    <script>
+        var user_id_is_valid = false;
+
+        function user_id_check(){
+            var user_id = $("#owner_id").val();
+
+            if(user_id == ''){
+                alert("아이디를 입력해주세요.");
+                return;
+            }
+
+            var formdata = new FormData();
+            formdata.append('user_id', user_id);
+
+            fetch("./join_check_id/", {
+                method: 'POST',
+                body: formdata,
+                credentials: 'same-origin',
+            })
+            .then(e => e.json()) // 비동기
+            .then(e => {
+                if(e.result == 'failed'){
+                    alert("중복");
+                    user_id_is_valid = false;
+                }
+                else if(e.result == 'success'){
+                    alert("사용가능");
+                    user_id_is_valid = true;
+                }
+            }); // 비동기
+        }
+
+        function join_check(){
+            if(!user_id_is_valid){
+                alert("아이디 중복 체크를 확인해주세요.");
+                return false;
+            }
+
+            var password = $("#owner_password").val();
+            var repassword = $("#owner_repassword").val();
+
+            if(password == repassword){
+                if(!(/^[a-zA-Z0-9]{8,15}$/.test(password))){
+                    alert('숫자와 영문자 조합으로 8~15자리를 사용해야 합니다.');
+                    return false;
+                }
+                else{
+                    alert("가입심사중");
+                    return true;
+                }
+            }
+            else{
+                alert("비밀번호가 다릅니다.");
+                return false;
+            }
+        }
+
+        function open_owner(){
+            $(".middle_cat_info_div, .middle_form_cat_button_div").css({
+                'display':'none'
+            });
+
+            $(".middle_direction1_div").css({
+                'display':'none'
+            });
+
+            $(".middle_direction2_div").css({
+                'display':'none'
+            });
+
+            $(".middle_owner_info_div").fadeIn(300);
+            $("#next_button").fadeIn(300);
+        }
+
+        function open_cat(){
+            if(!user_id_is_valid){
+                alert("아이디 중복 체크를 확인해주세요.");
+                return false;
+            }
+
+            var password = $("#owner_password").val();
+            var repassword = $("#owner_repassword").val();
+
+            if(password == repassword){
+                if(!(/^[a-zA-Z0-9]{8,15}$/.test(password))){
+                    alert('비밀번호를 숫자와 영문자 조합으로 8~15자리로 입력해주세요.');
+                }
+                else{
+                    $(".middle_owner_info_div, #next_button").css({
+                        'display':'none'
+                    });
+
+                    $("#middle_cat_info_div1").fadeIn(300);
+                    $(".middle_direction1_div").fadeIn(300);
+                    $(".middle_direction2_div").fadeIn(300);
+                    // $("#join_button, #before_button").fadeIn(300);
+                    $(".middle_form_cat_button_div").fadeIn(300);
+                }
+            }
+            else{
+                alert("비밀번호가 다릅니다.");
+            }
+        }
+
+        var current_idx = 1;
+
+        function open_before(){
+            if(current_idx >=2){
+                $("#middle_cat_info_div" + String(current_idx)).css({
+                    'display':'none'
+                });
+                $("#middle_cat_info_div" + String(current_idx-1)).fadeIn(300);
+                current_idx--;
+            }
+        }
+
+        function open_next(){
+            if(current_idx <=2){
+                $("#middle_cat_info_div" + String(current_idx)).css({
+                    'display':'none'
+                });
+                $("#middle_cat_info_div" + String(current_idx+1)).fadeIn(300);
+                current_idx++;
+            }
+            
+        }
+
+        function readURL(input) {
+            if(input.files && input.files[0]){
+                var reader= new FileReader();
+
+                reader.onload= function(e){
+                    $("#cat_img_preview"+ String(current_idx)).css('display','block');
+                    $("#cat_img_preview"+ String(current_idx)).attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $(document).ready(function(){
+            for(var i=1; i<=3; i++){
+                $("#cat_img"+ String(i)).change(function(){
+                    var img_src=$(this).val();
+                    readURL(this);
+                });
+            }
+        });
+
+
+        $("#owner_password, #owner_repassword").change(function(){
+            const psw = $("#owner_password").val();
+            const repsw = $("#owner_repassword").val();
+            console.log(psw, repsw);
+
+            if(psw == repsw){
+                $(".middle_owner_info_check_password")
+                .html("PASS")
+                .css({
+                    'color' : 'green'
+                });
+            }
+            else {
+                $(".middle_owner_info_check_password")
+                .html("비밀번호가 다릅니다.")
+                .css({
+                    'color' : 'red'
+                });
+            }
+
+
+        });
+
+        var check_agreement = false;
+
+        jQuery(function($) {
+            $('.middle_agreement_text_div').on('scroll', function() {
+                if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+                    check_agreement = true;
+                }
+            })
+        });
+
+        $('.agreement_checkbox').click(function() {
+            if ($(this).is(':checked')) {
+                $(".middle_go_join_button").css({
+                    'display' : 'block'
+                });
+            }
+            else {
+                $(".middle_go_join_button").css({
+                    'display' : 'none'
+                });
+            }
+        });
+
+        function go_join(){
+            if(check_agreement){
+                // alert("go join");
+                $(".middle_alert_div").css({
+                    'display' : 'none'
+                });
+                $(".middle_agreement_div").css({
+                    'display' : 'none'
+                });
+
+                $(".middle_select_div").fadeIn(300);
+                $(".middle_form_div").fadeIn(300);
+            }
+            else{
+                alert("주의사항을 모두 읽어주세요!");
+            }
+        }
+    </script>
+
+
+</body>
+</html>

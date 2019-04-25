@@ -4,9 +4,1071 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Gloria+Hallelujah|Permanent+Marker" rel="stylesheet">
     <title>Document</title>
+    <style type="text/css">
+        html{
+            height: 100%;
+            overflow : hidden;
+        }
+        body{
+            height: 100%;
+            margin: 0;
+            overflow : hidden;
+        }
+
+
+        .top{
+            width: 100%;
+            height: 30%;
+            position: relative;
+            background-color: transparent;
+        }
+
+        .top_menu_div{
+            width: 100%;
+            height: 20%;
+            background-color: transparent;
+            position: relative;
+        }
+        .top_menu_right_div{
+            width: 20%;
+            height: 100%;
+            float: right;
+            background-color: transparent;
+        }
+        .top_menu_login_div{
+            width: 25%;
+            height: auto;
+            background-color: transparent;
+            position: relative;
+            float: left;
+            top: 50%;
+            transform: translate(0%, -50%);
+        }
+        .top_menu_join_div{
+            width: 25%;
+            height: auto;
+            background-color: transparent;
+            position: relative;
+            float: left;
+            top: 50%;
+            transform: translate(0%, -50%);
+        }
+        .top_menu_mypage_div{
+            width: 25%;
+            height: auto;
+            background-color: transparent;
+            position: relative;
+            float: left;
+            top: 50%;
+            transform: translate(0%, -50%);
+        }
+        .top_menu_notification_div{
+            width: 25%;
+            height: 100%;
+            background-color: transparent;
+            position: relative;
+            float: left;
+            top: 50%;
+            transform: translate(0%, -50%);
+        }
+        .top_menu_notification_image{
+            width: 2vw; 
+            height: 2vw; 
+            position: absolute; 
+            top: 50%; 
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .top_menu_notification_count_div{
+            width: 1vw; 
+            height: 1vw; 
+            position: absolute; 
+            bottom: 10%; 
+            right: 20%; 
+            background-color : red; 
+            border-radius : 50%;
+            text-align : center;
+            font-size : 1rem;
+            font-weight: 900;
+        }
+
+        .top_menu_notification_shake{
+            -webkit-animation: shake 1s infinite;
+        }
+
+        @-webkit-keyframes shake {
+            0%, 20%, 50%, 80%, 100% {
+                -webkit-transform: translate(-50%, -50%) rotate(0); 
+            }
+            40% {
+                -webkit-transform: translate(-50%, -50%) rotate(30deg); 
+            }
+            60% {
+                -webkit-transform: translate(-50%, -50%) rotate(-30deg); 
+            }
+        }
+
+        .top_menu_left_div{
+            width: 20%;
+            height: 100%;
+            position: relative;
+            left: 10%;
+            float: left;
+            background-color: transparent;
+        }
+
+        .top_menu_left_search_div{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-color: transparent;
+        }
+
+        .top_menu_left_search_input_div{
+            width: 90%;
+            height: 100%;
+            position: relative;
+            float: left;
+            background-color: transparent;
+        }
+
+        #top_menu_left_search_input{
+            width: 100%;
+            height: 75%;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            outline: #FFC6C6;
+        }
+
+        .top_menu_left_search_image_div{
+            width: 10%;
+            height: 100%;
+            position: relative;
+            float: left;
+            background-color: transparent;
+            text-align: center;
+        }
+
+        .top_menu_left_search_image{
+            height: 1vw;
+            width: 1vw;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .top_menu_left_search_image_div:hover{
+            cursor: pointer;
+        }
+
+        .top_banner_div{
+            width: 100%;
+            height: 80%;
+            background-color: transparent;
+            position: relative;
+            border-top : 1px solid black;
+            border-bottom : 1px solid black;
+        }
+        .top_banner_content{
+            width: auto;
+            height: auto;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: transparent;
+            font-size: 5rem;
+            text-align: center;
+            font-family: 'Gloria Hallelujah', cursive;
+        }
+
+
+        .middle{
+            width: 100%;
+            height: 60%;
+            position: relative;
+            background-color: transparent;
+            border-top : 1px solid black;
+        }
+
+        .middle_category_div{
+            width: 100%;
+            height: 30%;
+            position: relative;
+            background-color: transparent;
+        }
+        .middle_category_content_cover{
+            width: 30%;
+            height: 100%;
+            position: absolute;
+            background-color: transparent;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .middle_category_content{
+            width: 25%;
+            height: 100%;
+            position: relative;
+            float: left;
+            /* top: 50%;
+            transform: translate(0%, -50%); */
+            background-color: transparent;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        .middle_category_content_title{
+            width: 100%;
+            height: 20%;
+            background-color: #FFC6C6;
+            border-bottom : 1px solid black;
+            position: relative;
+        }
+        .middle_category_content_title_text{
+            width: 100%;
+            height: auto;
+            z-index: 9999;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            font-size: 1rem;
+        }
+        .middle_category_content_hover{
+            width: 100%;
+            height: auto;
+            background-color: black;
+            opacity: 0;
+            transition: 0.3s ease;
+        }
+        .middle_category_cotent_hover_title{
+            width: 100%;
+            height: 2vw;
+            background-color: transparent;
+            color : white;
+        }
+        .middle_category_content_title:hover{
+            color: white;
+        }
+        .middle_category_content:hover .middle_category_content_hover{
+            opacity: 1;
+        }
+        .middle_category_mycatinfo_cover{
+            width: 20%;
+            height: 20%;
+            position: absolute;
+            top: 0;
+            left: 15%;
+            background-color: transparent;
+            float: left;
+        }
+        .middle_category_mycatinfo_image_div{
+            width: 20%;
+            height: 100%;
+            position: relative;
+            float: left;
+            background-color: transparent;
+            text-align: center;
+        }
+        .middle_category_mycatinfo_image_content{
+            width: 2vw;
+            height: 2vw;
+            position: relative;
+            background-color: transparent;
+        }
+        .middle_category_mycatinfo_title_div{
+            width: 70%;
+            height: 100%;
+            position: relative;
+            float: left;
+            background-color: transparent;
+        }
+        .middle_category_mycatinfo_title_content{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-color: transparent;
+            font-size: 1.1rem;
+            font-weight: 900;
+        }
+
+
+        .middle_cat_model_div{
+            width: 100%;
+            height: 70%;
+            background-color: transparent;
+            position: relative;
+        }
+        .middle_cat_model_content{
+            width: 25%;
+            height: 100%;
+            position: relative;
+            float: left;
+            background-color: transparent;
+            /* transition: 2s ease; */
+        }
+        .middle_cat_model_content_hover{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: brown;
+			opacity: 0; /*  div 투명도 --> 0이라서 안보임 */
+			transition: 0.5s ease;
+            z-index: 200;
+        }
+        .middle_cat_model_content:hover .middle_cat_model_content_hover{
+			opacity: 1;
+        }
+
+        .middle_cat_model_representation_image{
+            width: 50%;
+            height: 50%;
+            border-radius: 50%;
+            position: relative;
+            /* left: 50%; */
+            /* transform: translate(-50%, 0%); */
+            /* z-index: -1; */
+        }
+
+
+        #middle_cat_model_image_1{
+            top : -120%;
+            transform : rotate(50deg);
+            opacity: 0;
+        }
+        #middle_cat_model_image_2{
+            top : -150%;
+            transform : rotate(-50deg);
+            opacity: 0;
+        }
+        #middle_cat_model_image_3{
+            top : -130%;
+            transform : rotate(-30deg);
+            opacity: 0;
+        }
+        #middle_cat_model_image_4{
+            top : -140%;
+            transform : rotate(30deg);
+            opacity: 0;
+        }
+
+        .bottom{
+            width: 100%;
+            height: 10%;
+            position: relative;
+            background-color: white;
+            text-align: center;
+            font-size : 0.8vw;
+        }
+
+        .notification_div{
+            width: 20%;
+            height: 50%;
+            position: absolute;
+            background-color: gray;
+            top: 6%;
+            right: -20%;
+        }
+        .notifications{
+            width: 100%;
+            height: 10%;
+            background-color: crimson;
+            margin-bottom: 1%;
+            position: relative;
+        }
+        .notification_category{
+            width: 20%;
+            height: 100%;
+            background-color: burlywood;
+            position: relative;
+            float: left;
+        }
+        .notification_content{
+            width: 65%;
+            height: 100%;
+            background-color: darkorchid;
+            position: relative;
+            float: left;
+        }
+        .notification_delete{
+            width: 15%;
+            height: 100%;
+            background-color: brown;
+            position: relative;
+            float: left;
+        }
+        .notification_checked{
+            color : gray;
+        }
+
+        .notification_top_div{
+            width: 100%;
+            height: 10%;
+            position: relative;
+            background-color: red;
+            border-bottom: 1px solid black;
+        }
+
+        .notification_text_div{
+            width: 20%;
+            height: 100%;
+            position: relative;
+            float: left;
+            background-color: #ee82ee;
+        }
+
+        .notification_text{
+            width: 100%;
+            height: auto;
+            text-align: center;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .notification_button_div{
+            width: 80%;
+            height: 100%;
+            position: relative;
+            float: left;
+            background-color: yellowgreen;
+            text-align: right;
+        }
+
+        .notification_checked_delete_button, .notification_all_delete_button{
+            width: auto;
+            height: 2vw;
+            border: none;
+            outline: none;
+            border-radius: 5%;
+            background-color: pink;
+            position: relative;
+            top: 50%;
+            left: 5%;
+            transform: translate(0%, -50%);
+            cursor: pointer;
+            font-size: 1rem;
+            margin-right: 8%;
+        }
+        .notification_content_div{
+            width: 100%;
+            height: 90%;
+            overflow-y : scroll;
+            overflow-x : hidden;
+        }
+
+        .mycatinfo_div{
+            width: 15%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: -15%;
+            background-color: coral;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .chatting_button_div{
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            bottom : 5%;
+            right: 5%;
+            background-color: #ee82ee;
+            border: 4px solid pink;
+            border-radius: 50%;
+        }
+
+        .chatting_button_text{
+            width: 100%;
+            height: auto;
+            top: 50%;
+            transform: translateY(-50%);
+            position: relative;
+            background-color: transparent;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .chatting_div{
+            width: 0px;
+            height: 0px;
+            position: fixed;
+            bottom: 5%;
+            right: 2%;
+            background-color: #FFC6C6;
+            opacity: 0;
+        }
+
+        .chatting_content_div, .chatting_userroom_list_div{
+            width: 95%;
+            height: 90%;
+            position: relative;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: cadetblue;
+            margin-bottom: 5%;
+        }
+
+        .chatting_input_div{
+            width: 95%;
+            height: 10%;
+            position: relative;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: cadetblue;
+        }
+
+        #chatting_content_iframe{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .chatting_userroom{
+            width: 90%;
+            height: auto;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5%;
+            border: 1px solid pink;
+            margin-bottom : 3%;
+        }
+
+        .chatting_close_button{
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 2%;
+            right: 5%;
+        }
+
+        .chatting_go_userroom_list_button{
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 2%;
+            left: 5%;
+            display: none;
+        }
+
+    </style>
 </head>
 <body>
-    main22
+    <div class="top">
+        <div class="top_menu_div">
+            <div class="top_menu_right_div">
+                {% if login == 'true' %}
+                <div class="top_menu_login_div">
+                    <a href="/logout_page/">logout</a>
+                </div>
+                <div class="top_menu_mypage_div">
+                    mypage
+                </div>
+                {% else %}
+                <div class="top_menu_login_div">
+                    <a href="/login_page/">login</a>
+                </div>
+                <div class="top_menu_join_div">
+                    <a href="/join/">join</a>
+                </div>
+                <div class="top_menu_mypage_div">
+                    <a href="/login_page/">mypage</a>
+                </div>
+                {% endif %}
+            
+
+                <div class="top_menu_notification_div">
+                    {% if is_important %}
+
+                        <img class="top_menu_notification_image top_menu_notification_shake"
+                        src="/static/image/notification_icon.png" 
+                        onclick="toggle_notification();">
+                        
+                    {% else %}
+
+                        <img class="top_menu_notification_image"
+                        src="/static/image/notification_icon.png" 
+                        onclick="toggle_notification();">
+
+                    {% endif %}
+
+
+                    {% if notifications_count > 0 %}
+                    <div class="top_menu_notification_count_div" onclick="toggle_notification();">
+                        {{notifications_count}}
+                    </div>
+                    {% endif %}
+
+
+
+                </div>
+            </div>
+            <div class="top_menu_left_div">
+                <div class="top_menu_left_search_input_div">
+                    <input type="text" id="top_menu_left_search_input">
+                </div>
+                <div class="top_menu_left_search_image_div" onclick="search_article();">
+                    <img class="top_menu_left_search_image" src="/static/image/search_icon.png">
+                </div>
+            </div>
+        </div>
+        <div class="top_banner_div">
+            <div class="top_banner_content">
+                MIDGO<br>
+                <p style="font-size : 1.5rem; font-weight : 500; font-family: 'Do Hyeon', sans-serif; ">
+                    <font color="pink">믿</font>고알아가는<font color="pink">꼬</font>미네
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="middle">
+        <div class="middle_category_div">
+            <!-- <div class="middle_category_mycatinfo_cover">
+                <div class="middle_category_mycatinfo_image_div">
+                    <img 
+                    class="middle_category_mycatinfo_image_content"
+                    src="/static/image/cat_foot_icon.png"
+                    onclick="toggle_mycatinfo();"
+                    >
+                </div>
+                <div class="middle_category_mycatinfo_title_div">
+                    <div class="middle_category_mycatinfo_title_content">
+                        꼬집사's say
+                    </div>
+                </div>
+            </div> -->
+            <div class="middle_category_content_cover">
+                <div class="middle_category_content">
+                    <div class="middle_category_content_title">
+                        <div class="middle_category_content_title_text">
+                            PICK'
+                        </div>
+                    </div>
+                    <div class="middle_category_content_hover">
+                        <div class="middle_category_cotent_hover_title">
+                            subtitle1
+                        </div>
+                        <div class="middle_category_cotent_hover_title">
+                            subtitle2
+                        </div>
+                    </div>
+                </div>
+                <div class="middle_category_content">
+                    <div class="middle_category_content_title">
+                        <div class="middle_category_content_title_text">
+                            INTRO
+                        </div>
+                    </div>
+                    <div class="middle_category_content_hover">
+                        <div class="middle_category_cotent_hover_title">
+                            subtitle1
+                        </div>
+                        <div class="middle_category_cotent_hover_title">
+                            subtitle2
+                        </div>
+                        <div class="middle_category_cotent_hover_title">
+                            subtitle3
+                        </div>
+                    </div>
+                </div>
+                <div class="middle_category_content">
+                    <div class="middle_category_content_title">
+                        <div class="middle_category_content_title_text">
+                            STUDY
+                        </div>
+                    </div>
+                    <div class="middle_category_content_hover">
+                        <div class="middle_category_cotent_hover_title">
+                            subtitle1
+                        </div>
+                        <div class="middle_category_cotent_hover_title">
+                            subtitle2
+                        </div>
+                    </div>
+                </div>
+                <div class="middle_category_content">
+                    <div class="middle_category_content_title">
+                        <div class="middle_category_content_title_text">
+                            REVIEW
+                        </div>
+                    </div>
+                    <div class="middle_category_content_hover">
+                        <div class="middle_category_cotent_hover_title">
+                            subtitle1
+                        </div>
+                        <div class="middle_category_cotent_hover_title">
+                            subtitle2
+                        </div>
+                        <div class="middle_category_cotent_hover_title">
+                            subtitle3
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="middle_category_content_hover_cover">
+                <div class="middle_category_content_hover">
+
+                </div>
+                <div class="middle_category_content_hover">
+                    
+                </div>
+                <div class="middle_category_content_hover">
+                    
+                </div>
+                <div class="middle_category_content_hover">
+                    
+                </div>
+            </div> -->
+        </div>
+        <div class="middle_cat_model_div">
+            <div class="middle_cat_model_content" id="middle_cat_model_content_1">
+                <img class="middle_cat_model_representation_image" id="middle_cat_model_image_1" src="/static/image/cat_model_1.png">
+                <!-- <div class="middle_cat_model_content_hover" id="middle_cat_model_hover_1">
+
+                </div> -->
+            </div>
+            <div class="middle_cat_model_content" id="middle_cat_model_content_2">
+                <img class="middle_cat_model_representation_image" id="middle_cat_model_image_2" src="/static/image/cat_model_2.png">
+                <!-- <div class="middle_cat_model_content_hover" id="middle_cat_model_hover_2">
+                    
+                </div> -->
+            </div>
+            <div class="middle_cat_model_content" id="middle_cat_model_content_3">
+                <img class="middle_cat_model_representation_image" id="middle_cat_model_image_3" src="/static/image/cat_model_3.png">
+                <!-- <div class="middle_cat_model_content_hover" id="middle_cat_model_hover_3">
+                    
+                </div> -->
+            </div>
+            <div class="middle_cat_model_content" id="middle_cat_model_content_4">
+                <img class="middle_cat_model_representation_image" id="middle_cat_model_image_4" src="/static/image/cat_model_4.jpg">
+                <!-- <div class="middle_cat_model_content_hover" id="middle_cat_model_hover_4">
+                    
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        COPYRIGHT (C) MIDGO<br><br>
+        <font style="font-weight: 600;">Contact email</font><br>
+        kkolayun@gmail.com
+    </div>
+
+    <div class="notification_div">
+        <div class="notification_top_div">
+            <div class="notification_text_div">
+                <div class="notification_text">
+                    전체 알림
+                </div>
+            </div>
+            <div class="notification_button_div">
+                <button class="notification_checked_delete_button" type="button" onclick="delete_checked_notification();">읽은 알림 삭제</button>
+                <button class="notification_all_delete_button" onclick="delete_all_notification();">모두 삭제</button>
+            </div>
+        </div>
+
+        <div class="notification_content_div">
+        {% for notification in notifications %}
+            {% if notification.is_checked %}
+            <div class="notifications notification_checked" id={{notification.id}}>
+                <div class="notification_category">
+                    {{notification.category}}
+                </div>
+                <div class="notification_content"  onclick="check_notification({{notification.id}}, {{notification.article.id}});">
+                    {{notification.content}}
+                </div>
+                <div class="notification_delete" onclick="delete_notification({{notification.id}});">
+                    X
+                </div>
+            </div>
+
+            {% else %}
+
+            <div class="notifications"  id={{notification.id}}>
+                <div class="notification_category">
+                    {{notification.category}}
+                </div>
+                <div class="notification_content" onclick="check_notification({{notification.id}}, {{notification.article.id}});">
+                    {{notification.content}}
+                </div>
+                <div class="notification_delete" onclick="delete_notification({{notification.id}});">
+                    X
+                </div>
+            </div>
+            
+            {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+
+    <div class="mycatinfo_div">
+
+    </div>
+
+    <div class="chatting_button_div" onclick="open_chat();">
+        <div class="chatting_button_text">1:1</div>
+    </div>
+
+    <div class="chatting_div">
+        <div class="chatting_close_button" onclick="close_chat();">
+            X
+        </div>
+        <div class="chatting_go_userroom_list_button" onclick="go_userroom_list();">
+            <
+        </div>
+        {% if user.username == 'junsik' %}
+        <div class="chatting_userroom_list_div">
+            {% for u in user_list %}
+                <div class="chatting_userroom" id="{{u.username}}" onclick="go_chat(this);">
+                    {{u.username}}<br>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="chatting_content_div" style='display: none;'>
+            <iframe id="chatting_content_iframe" src=""></iframe>
+        </div>
+        {% else %}
+        <div class="chatting_content_div">
+            <iframe id="chatting_content_iframe" src="/chat/{{user.username}}/"></iframe>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+
+        function go_chat(this_div){
+            console.log(this_div.id);
+            $(".chatting_userroom_list_div").css({
+                'display' : 'none'
+            });
+
+            $("#chatting_content_iframe").attr('src', '/chat/' + this_div.id + '/');
+            $(".chatting_content_div").css({
+                'display' : 'block'
+            });
+            $(".chatting_go_userroom_list_button").css({
+                'display' : 'block'
+            });
+        }
+
+        function go_userroom_list(){
+            $(".chatting_userroom_list_div").css({
+                'display' : 'block'
+            });
+
+            $("#chatting_content_iframe").attr('src', '');
+            $(".chatting_content_div").css({
+                'display' : 'none'
+            });
+            $(".chatting_go_userroom_list_button").css({
+                'display' : 'none'
+            });
+        }
+
+        function open_chat(){
+            $(".chatting_button_div").css({
+                'display' : 'none'
+            });
+
+            $(".chatting_div").animate({
+                'width' : '300px',
+                'height' : '700px',
+                'opacity' : '1'
+            },100);
+        }
+
+        function close_chat(){
+            $(".chatting_div").css({
+                'width' : '0px',
+                'height' : '0px',
+                'opacity' : '0'
+            });
+
+            $(".chatting_button_div").fadeIn(200);
+        }
+
+        function delete_notification(noti_id){
+            $("#"+String(noti_id)).hide();
+            fetch("/delete_notification/" + String(noti_id) + "/")
+                .then(e => e.json())
+                .then(e => {
+                    console.log(e);
+                });
+        }
+
+        function delete_checked_notification(){
+            $(".notification_checked").css({
+                'display' : 'none'
+            });
+            fetch("/delete_checked_notification/") // (/test.json) 호출 (GET)
+                .then(e => e.json()) // 비동기
+                .then(e => {
+                    console.log(e);
+                }); // 비동기
+        }
+
+        function delete_all_notification(){
+            $(".notifications").hide();
+            fetch("/delete_all_notification/")
+                .then(e => e.json())
+                .then(e => {
+                    console.log(e);
+                });
+        }
+
+        function check_notification(noti_id, article_id){
+            $("#"+String(noti_id)).addClass('notification_checked');
+            fetch("/check_notification/" + String(noti_id) + "/")
+                .then(e => e.json())
+                .then(e => {
+                    console.log(e);
+                });
+            window.open('/board/read/' + String(article_id) + '/');
+        }
+
+        var notification_is_open = false;
+
+        function toggle_notification(){
+            if(notification_is_open){
+                $(".notification_div").stop().animate({
+                    'right' : '-20%'
+                });
+                notification_is_open = false;
+            }  
+            else{
+                $(".notification_div").stop().animate({
+                    'right' : '0%'
+                });
+                notification_is_open = true;
+            }
+
+            $(".top_menu_notification_image").removeClass('top_menu_notification_shake');
+            $(".top_menu_notification_count_div").css({
+                    'display' : 'none'
+            });
+            // fetch("./check_notification/") // (/test.json) 호출 (GET)
+            //     .then(e => e.json()) // 비동기
+            //     .then(e => {
+            //         console.log(e);
+            //         $(".top_menu_notification_count_div").css({
+            //             'display' : 'none'
+            //         });
+            //     }); // 비동기
+        }
+
+        var mycatinfo_is_open = false;
+
+        function toggle_mycatinfo(){
+            if(mycatinfo_is_open){
+                $(".mycatinfo_div").stop().animate({
+                    'left' : '-20%'
+                });
+                mycatinfo_is_open = false;
+            }  
+            else{
+                $(".mycatinfo_div").stop().animate({
+                    'left' : '0%'
+                });
+                mycatinfo_is_open = true;
+            }
+        }
+
+        function search_article(){
+            const search_value = $("#top_menu_left_search_input").val();
+            console.log(search_value);
+
+            window.location.href = '/search/' + search_value + "/";
+        }
+
+        
+        $(document).ready(function(){
+
+            setTimeout(function(){
+
+                $("#middle_cat_model_image_1").css({
+                    'transition' : 'transform 2s',
+                    'transform' : 'rotate(0deg)',
+                    'opacity' : '1'
+                });
+                $("#middle_cat_model_image_1")
+                .animate({
+                    'top' : '50%'
+                }, 500)
+                .animate({
+                    'top' : '30%'
+                }, 500)
+                .animate({
+                    'top' : '40%'
+                }, 500);
+
+            }, 600);
+
+            setTimeout(function(){
+                $("#middle_cat_model_image_2").css({
+                    'transition' : 'transform 2s',
+                    'transform' : 'rotate(0deg)',
+                    'opacity' : '1'
+                });
+                $("#middle_cat_model_image_2")
+                .animate({
+                    'top' : '50%'
+                }, 500)
+                .animate({
+                    'top' : '30%'
+                }, 500)
+                .animate({
+                    'top' : '40%'
+                }, 500);
+            }, 800);
+
+            setTimeout(function(){
+                $("#middle_cat_model_image_3").css({
+                    'transition' : 'transform 2s',
+                    'transform' : 'rotate(0deg)',
+                    'opacity' : '1'
+                });
+                $("#middle_cat_model_image_3")
+                .animate({
+                    'top' : '50%'
+                }, 500)
+                .animate({
+                    'top' : '30%'
+                }, 500)
+                .animate({
+                    'top' : '40%'
+                }, 500);
+            }, 700);
+
+            setTimeout(function(){
+                $("#middle_cat_model_image_4").css({
+                    'transition' : 'transform 2s',
+                    'transform' : 'rotate(0deg)',
+                    'opacity' : '1'
+                });
+                $("#middle_cat_model_image_4")
+                .animate({
+                    'top' : '50%'
+                }, 500)
+                .animate({
+                    'top' : '30%'
+                }, 500)
+                .animate({
+                    'top' : '40%'
+                }, 500);
+            }, 800);
+        });
+    </script>
 </body>
 </html>

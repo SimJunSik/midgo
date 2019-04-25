@@ -5,6 +5,11 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- font import -->
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cute+Font|Niconne|Yellowtail" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Permanent+Marker" rel="stylesheet">
+
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css">
     <script src="main.js"></script> -->
     <style type="text/css">
@@ -15,14 +20,17 @@
             height: 100%;
             margin: 0;
             position: relative;
-            background-color: beige;
+
+            background-image: url(/static/image/skip_background.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
         .top{
             width: 100%;
             height: 10%;
             position: relative;
-            background-color: beige;
+            background-color: transparent;
         }
 
         .top_left{
@@ -48,10 +56,12 @@
             height: auto;
             font-size: 5rem;
             text-align: center;
-            color : black;
+            color : white;
             position: relative;
             top: 50%;
             transform: translate(0%, -50%);
+            font-family: 'Gloria Hallelujah', cursive;
+            /* font-family: 'Permanent Marker', cursive; */
         }
 
         .top_right{
@@ -65,7 +75,8 @@
 
         .middle{
             width: 100%;
-            height: 80%;
+            height: 90%;
+            position: relative;
             background-color: transparent;
         }
 
@@ -122,7 +133,7 @@
             margin: 4px 2px;
         }
 
-        #login_button{
+        #login_button, #logout_button{
             width: auto;
             height: auto;
             position: relative;
@@ -130,6 +141,7 @@
             border-radius: 12px;
             margin-right: 5%;
         }
+        
 
         #join_button{
             width: auto;
@@ -178,13 +190,13 @@
 
         .noti_div{
             position: absolute;
-            width: 80%;
-            height: 70%;
+            width: 0%;
+            height: 0%;
             background-color: aquamarine;
             top : 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            display: none;
+            /* display: none; */
         }
 
         .bottom{
@@ -230,6 +242,137 @@
             position: relative;
             background-color: #4CAF50;
         }
+
+        .middle_intro_text_div{
+            width: 40%;
+            height: 25%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 15%;
+            background-color: transparent;
+        }
+
+        .middle_intro_text_english_div{
+            width: 100%;
+            height: 50%;
+            position: relative;
+            background-color: transparent;
+        }
+
+        .middle_intro_text_welcome_div{
+            width: 100%;
+            height:50%;
+            position: relative;
+            background-color: transparent;
+        }
+
+        .middle_intro_text_english{
+            width: 100%;
+            height: auto;
+            position: relative;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 4rem;
+            font-family: 'Niconne', cursive;
+            color: white;
+            font-weight: 400;
+        }
+
+        .middle_intro_text_welcome{
+            width: 100%;
+            height: auto;
+            position: relative;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            font-weight: 500;
+            font-family: 'Cute Font', cursive;
+        }
+
+        .middle_go_main_div{
+            width: auto;
+            height: auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 5%;
+            cursor: pointer;
+        }
+
+        .middle_go_main_image{
+            width: 3vw;
+            height: 3vw;
+        }
+
+        .middle_model_image_div{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            background-color: transparent;
+        }
+
+        .middle_model_image_cover{
+            width: auto;
+            height: auto;
+            position: absolute;
+            background-color: transparent;
+        }
+
+        .middle_model_image{
+            width: 11vw;
+            height: 11vw;
+            border-radius: 50%;
+        }
+
+        .middle_model_hover{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: beige;
+			opacity: 0; /*  div 투명도 --> 0이라서 안보임 */
+			transition: 0.3s ease;
+            z-index: 200;
+            border-radius: 50%;
+        }
+
+        .middle_model_image_cover:hover .middle_model_hover{
+			opacity: 1;
+        }
+
+        #middle_model_cover1{
+            left: 15%;
+            bottom: 5%;
+        }
+
+        #middle_model_cover2{
+            left: 30%;
+            transform: translateX(-50%);
+            bottom: 40%;
+        }
+
+        #middle_model_cover3{
+            left: 50%;
+            transform: translateX(-50%);
+            top: 10%;
+        }
+
+        #middle_model_cover4{
+            left: 70%;
+            transform: translateX(-50%);
+            bottom: 40%;
+        }
+
+        #middle_model_cover5{
+            right: 15%;
+            bottom: 5%;
+        }
     </style>
 </head>
 <body>
@@ -247,30 +390,84 @@
                 </p> -->
             </div>
         </div>
-        <div class="top_right">
+        <!-- <div class="top_right">
             <div class="top_right_button_div">
-                <div id="login_button">로그인</div>
-                <div id="join_button">회원가입</div>
-                <div id="mypage_button">마이페이지</div>
-                <!-- <button class="button" id="category_button" onclick="toggle_category();">=</button> -->
+                {% if login == 'true' %}
+                    <div id="logout_button">로그아웃</div>
+                    <div id="mypage_button">마이페이지</div>
+                {% else %}
+                    <div id="login_button">로그인</div>
+                    <div id="join_button">회원가입</div>
+                {% endif %}
             </div>
-        </div>
+        </div> -->
     </div>
     <div class="middle">
-        <div class="middle_image_div">
+        <!-- <div class="middle_image_div">
             <a href="./main/">
                 <img src="/static/image/home.png" class="middle_button">
             </a>
+        </div> -->
+        <div class="middle_model_image_div">
+            <div class="middle_model_image_cover" id="middle_model_cover1">
+                <img class="middle_model_image" id="middle_model_image1" src="/static/image/cat_model_1.jpg">
+                <div class="middle_model_hover">
+
+                </div>
+            </div>
+
+            <div class="middle_model_image_cover" id="middle_model_cover2">
+                <img class="middle_model_image" id="middle_model_image2" src="/static/image/cat_model_2.jpg">
+                <div class="middle_model_hover">
+                    
+                </div>
+            </div>
+            <div class="middle_model_image_cover" id="middle_model_cover3">
+                <img class="middle_model_image" id="middle_model_image3" src="/static/image/cat_model_3.jpg">
+                <div class="middle_model_hover">
+                    
+                </div>
+            </div>
+            <div class="middle_model_image_cover" id="middle_model_cover4">
+                <img class="middle_model_image" id="middle_model_image4" src="/static/image/cat_model_4.jpg">
+                <div class="middle_model_hover">
+                    
+                </div>
+            </div>
+            <div class="middle_model_image_cover" id="middle_model_cover5">
+                <img class="middle_model_image" id="middle_model_image5" src="/static/image/ryan_icon.png">
+                <div class="middle_model_hover">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="middle_intro_text_div">
+            <div class="middle_intro_text_english_div">
+                <div class="middle_intro_text_english">
+                    The precious life<br>
+                    with a cat
+                </div>
+            </div>
+            <div class="middle_intro_text_welcome_div">
+                <div class="middle_intro_text_welcome">
+                    '믿고 알아가는 꼬미네'를 방문해 주셔서 감사합니다
+                </div>
+            </div>
+        </div>
+
+        <div class="middle_go_main_div">
+            <img class="middle_go_main_image" src="/static/image/down2.gif" onclick="go_main();">
         </div>
     </div>
 
-    <div class="bottom">
+    <!-- <div class="bottom">
         <div class="bottom_text_div">
                 <br>
                 “우리가 이 땅에서 고양이한테 어떻게 대해주느냐에 따라 천국에서의 위치가 달라진다." <br>
                 - 로버트 A. 하인라인 - <br>
         </div>
-    </div>
+    </div> -->
 
     <!-- <div class="category_div">
         <div class="category_content_div">
@@ -307,7 +504,16 @@
 
         function toggle_notification(){
             if(notification_is_block){
-                $(".noti_div").fadeIn(200);
+                $(".noti_button_div").animate({
+                    'top' : '900%'
+                },600);
+                setTimeout(function(){
+                    // $(".noti_div").fadeIn(200);
+                    $(".noti_div").animate({
+                        'width' : '95%',
+                        'height' : '90%'
+                    },200);
+                },600);
                 notification_is_block = false;
             }
             else {
@@ -331,6 +537,19 @@
                 });
                 category_is_block = true;
             }
+        }
+
+        function go_main(){
+            $("body")
+            .animate({
+                'top' : '5%'
+            },500)
+            .animate({
+                'top' : '-100%'
+            },200);
+            setTimeout(function(){
+                window.location.href = '/main/';
+            },650);
         }
     </script>
 </body>
